@@ -356,7 +356,6 @@ function togglePassword() {
 
 </script>
 
-
 <?php
 include('../shared/close.php');
 ?>

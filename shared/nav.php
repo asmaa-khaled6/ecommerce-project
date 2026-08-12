@@ -4,9 +4,9 @@
 
         <!-- Logo -->
         <a class="navbar-brand text-white fs-3 fw-bold"
-   href="/nti/FinalProject/ecommerce-project/index.php">
-    <i class="bi bi-star"></i> START
-</a>
+           href="/nti/FinalProject/ecommerce-project/index.php">
+            <i class="bi bi-star"></i> START
+        </a>
 
         <!-- Mobile Button -->
         <button class="navbar-toggler"
@@ -21,14 +21,9 @@
 
         </button>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-
-                
-
 
                 <!-- Categories -->
                 <li class="nav-item dropdown">
@@ -48,18 +43,14 @@
                         <li>
                             <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/categories/add.php">
-
                                 Add Category
-
                             </a>
                         </li>
 
                         <li>
-                           <a class="dropdown-item"
+                            <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/categories/list.php">
-
                                 List Categories
-
                             </a>
                         </li>
 
@@ -84,7 +75,7 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                             <a class="dropdown-item"
+                            <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/products/add.php">
                                 Add Product
                             </a>
@@ -125,7 +116,7 @@
                         </li>
 
                         <li>
-                             <a class="dropdown-item"
+                            <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/clients/list.php">
                                 List Clients
                             </a>
@@ -140,7 +131,7 @@
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle text-white"
-                       href=""
+                       href="#"
                        role="button"
                        data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -154,18 +145,14 @@
                         <li>
                             <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/Employee/add.php">
-
                                 Add Employee
-
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/Employee/list.php">
-
                                 List Employees
-
                             </a>
                         </li>
 
@@ -192,18 +179,14 @@
                         <li>
                             <a class="dropdown-item"
                                href="/nti/FinalProject/ecommerce-project/Partners/add.php">
-
                                 Add Partner
-
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/FinalProject/ecommerce-project/Partners/list.php"">
-
+                               href="/nti/FinalProject/ecommerce-project/Partners/list.php">
                                 List Partners
-
                             </a>
                         </li>
 
@@ -229,19 +212,15 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/brands/add.php">
-
+                               href="/nti/FinalProject/ecommerce-project/brands/add.php">
                                 Add Brand
-
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/brands/list.php">
-
+                               href="/nti/FinalProject/ecommerce-project/brands/list.php">
                                 List Brands
-
                             </a>
                         </li>
 
@@ -249,12 +228,7 @@
 
                 </li>
 
-
             </ul>
-
-
-            
-
 
         </div>
 
