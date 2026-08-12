@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <nav class="navbar navbar-expand-lg" style="background-color:#2F8FEF;">
 
     <div class="container-fluid">
@@ -6,7 +7,6 @@
         <a class="navbar-brand text-white" href="/nti/Project2/index.php">
             START
         </a>
-
         <!-- Mobile Button -->
         <button class="navbar-toggler"
                 type="button"
@@ -17,10 +17,7 @@
                 aria-label="Toggle navigation">
 
             <span class="navbar-toggler-icon"></span>
-
         </button>
-
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -37,8 +34,6 @@
                     </a>
 
                 </li>
-
-
                 <!-- Categories -->
                 <li class="nav-item dropdown">
 
@@ -204,7 +199,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\partners/add.php">
+                               href="/nti/FinalProject/ecommerce-project/Partners/add.php">
 
                                 Add Partner
 
@@ -213,7 +208,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\products/partners/list.php">
+                               href="/nti/FinalProject/ecommerce-project/Partners/list.php">
 
                                 List Partners
 
@@ -225,6 +220,7 @@
                 </li>
 
 
+                 
                 <!-- Brands -->
                 <li class="nav-item dropdown">
 
@@ -261,21 +257,24 @@
                     </ul>
 
                 </li>
-
-
             </ul>
+           <!-- Cart Button -->
+           <!-- Cart Button -->
+<a href="../cart.php" class="btn btn-primary border-light text-white me-1" title="Cart">
+    <i class="bi bi-cart3"></i>
+</a>
 
+<!-- Favourite / Wishlist Button -->
+<a href="../wishlist.php" class="btn btn-primary border-light text-white me-2" title="Favourite">
+    <i class="bi bi-heart"></i>
+</a>
 
-            <!-- Login -->
-            <a href="/nti/Project2/login.php"
-               class="btn btn-light">
-
-                <i class="bi bi-person"></i>
-                Login
-
-            </a>
-
-
+<!-- Login Button -->
+<a href="../login.php" class="btn btn-light text-primary fw-bold">
+    <i class="bi bi-person"></i>
+    Login
+</a>
+         
         </div>
 
     </div>
