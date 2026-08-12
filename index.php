@@ -27,7 +27,7 @@ $clientCount = $row['total'];
 ?>
 
 <link rel="stylesheet" href="./css/style.css">
-<section class="welcome-section">
+<section class="welcome-section" style="background-color:#F5F6FA !important;">
 
     <div class="container">
 
@@ -120,9 +120,9 @@ $clientCount = $row['total'];
             <!-- Image -->
             <div class="col-lg-6 text-center">
 
-                <img src="./images/home.jpg"
+                <img src="./images/home.png"
                      alt="Store"
-                     class="welcome-image">
+                     class="welcome-image img-fluid">
 
             </div>
 
