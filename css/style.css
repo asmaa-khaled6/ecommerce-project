@@ -1,10 +1,16 @@
-body {
-    background-color: #F5F7FA;
+
+.nav-item:hover .nav-link {
+    color: white !important;
+    background-color: #1976D2;
+    border-radius: 6px;
+    transform: translateY(-2px);
+}
+.btn:hover{
+     transform: translateY(-2px);
 }
 
-
 .welcome-section {
-    background-color: #DCEEFF;
+
     padding: 80px 0;
     min-height: 550px;
 }
@@ -18,7 +24,7 @@ body {
 
 
 .welcome-section h1 {
-    color: #17365D;
+    color: #36517C;
     font-size: 55px;
     font-weight: bold;
 }
@@ -64,3 +70,285 @@ body {
 .stat-card p {
     color: #17365D;
 }
+
+
+body {
+    background-color: #F5F6FA !important;
+}
+
+.welcome-section {
+    background-color: #F5F6FA !important;
+}
+/* Client Form */
+
+.client-form-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.client-form-card .form-label {
+    color: #17365D;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.client-form-card .form-control,
+.client-form-card .form-select {
+    height: 42px;
+    border: 1px solid #d9dee7;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+.client-form-card .form-control:focus,
+.client-form-card .form-select:focus {
+    border-color: #2F8FEF;
+    box-shadow: 0 0 0 0.15rem rgba(47, 143, 239, 0.15);
+}
+
+
+.client-form-card .form-control::placeholder {
+    color: #adb5bd;
+}
+
+
+.add-client-btn {
+    background-color: #2F8FEF;
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+
+.add-client-btn:hover {
+    background-color: #217fdc;
+    color: white;
+}
+
+/* ==============================
+   Clients Page
+============================== */
+
+.clients-title {
+    color: #172b4d;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.clients-title i {
+    color: #2f8fef;
+    margin-right: 8px;
+}
+
+.clients-subtitle {
+    color: #718096;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/* Add Client Button */
+
+.add-client-btn {
+    background-color: #2f8fef;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-client-btn:hover {
+    background-color: #1976d2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Main Card */
+
+.clients-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 25px rgba(31, 71, 105, 0.08);
+    border: 1px solid #edf2f7;
+}
+
+
+/* Search */
+
+.search-box {
+    position: relative;
+    width: 350px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    color: #8da2b8;
+    z-index: 2;
+}
+
+.search-box input {
+    padding-left: 42px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #dce5ef;
+}
+
+.search-box input:focus {
+    border-color: #2f8fef;
+    box-shadow: 0 0 0 3px rgba(47, 143, 239, 0.1);
+}
+
+
+/* Table */
+
+.clients-table {
+    margin-bottom: 0;
+}
+
+.clients-table thead {
+    background-color: #f7faff;
+}
+
+.clients-table thead th {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 15px 12px;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.clients-table tbody td {
+    color: #344b6b;
+    padding: 17px 12px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 14px;
+}
+
+.clients-table tbody tr {
+    transition: 0.2s;
+}
+
+.clients-table tbody tr:hover {
+    background-color: #f8fbff;
+}
+
+
+/* ID */
+
+.client-id {
+    background-color: #edf6ff;
+    color: #2f8fef;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* Client */
+
+.client-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #243b5a;
+    white-space: nowrap;
+}
+
+.client-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background-color: #eaf4ff;
+    color: #2f8fef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+
+/* Location */
+
+.location-icon {
+    color: #2f8fef;
+}
+
+
+/* Password */
+
+.password-text {
+    background-color: #f4f7fa;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #52657d;
+}
+
+
+/* Gender */
+
+.gender-badge {
+    background-color: #eef6ff;
+    color: #2f8fef;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Actions */
+
+.action-edit,
+.action-delete {
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+.action-edit {
+    color: #2f8fef;
+}
+
+.action-delete {
+    color: #ef5350;
+}
+
+.action-edit:hover {
+    color: #1976d2;
+}
+
+.action-delete:hover {
+    color: #d32f2f;
+}
+
+
+
+.card {
+    border-top: 5px solid #1976d2  !important;
+}
+.stat-card{
+     border-bottom: 5px solid #1976d2  !important;
+}
+
