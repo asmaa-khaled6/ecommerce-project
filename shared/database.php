@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $pass="";
-$db="secondproject";
+$db="ecommerces";
 $conn=mysqli_connect($host,$user,$pass,$db);
 
 

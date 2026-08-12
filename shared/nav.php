@@ -94,16 +94,14 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/products/add.php">
-
+                               href="nti\FinalProject\ecommerce-project\products\add.php">
                                 Add Product
-
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/products/list.php">
+                               href="nti\FinalProject\ecommerce-project\products\list.php">
 
                                 List Products
 
@@ -132,7 +130,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/clients/add.php">
+                               href="nti\FinalProject\ecommerce-project\clients\add.php">
 
                                 Add Client
 
@@ -141,7 +139,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/clients/list.php">
+                               href="nti\FinalProject\ecommerce-project\clients/list.php">
 
                                 List Clients
 
@@ -152,44 +150,42 @@
 
                 </li>
 
+<!-- Employees -->
+<li class="nav-item dropdown">
 
-                <!-- Employees -->
-                <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white"
+       href="#"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
 
-                    <a class="nav-link dropdown-toggle text-white"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown"
-                       aria-expanded="false">
+        Employees
 
-                        Employees
+    </a>
 
-                    </a>
+    <ul class="dropdown-menu">
 
-                    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item"
+               href="/nti/FinalProject/ecommerce-project/Employee/add.php">
 
-                        <li>
-                            <a class="dropdown-item"
-                               href="/nti/Project2/employees/add.php">
+                Add Employee
 
-                                Add Employee
+            </a>
+        </li>
 
-                            </a>
-                        </li>
+        <li>
+            <a class="dropdown-item"
+               href="/nti/FinalProject/ecommerce-project/Employee/list.php">
 
-                        <li>
-                            <a class="dropdown-item"
-                               href="/nti/Project2/employees/list.php">
+                List Employees
 
-                                List Employees
+            </a>
+        </li>
 
-                            </a>
-                        </li>
+    </ul>
 
-                    </ul>
-
-                </li>
-
+</li>
 
                 <!-- Partners -->
                 <li class="nav-item dropdown">
@@ -208,7 +204,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/partners/add.php">
+                               href="nti\FinalProject\ecommerce-project\partners/add.php">
 
                                 Add Partner
 
@@ -217,7 +213,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/partners/list.php">
+                               href="nti\FinalProject\ecommerce-project\products/partners/list.php">
 
                                 List Partners
 
