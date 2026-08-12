@@ -1,12 +1,13 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <nav class="navbar navbar-expand-lg" style="background-color:#2F8FEF;">
 
     <div class="container-fluid">
 
         <!-- Logo -->
-        <a class="navbar-brand text-white" href="/nti/Project2/index.php">
-            START
-        </a>
+        <a class="navbar-brand text-white fs-3 fw-bold"
+   href="/nti/FinalProject/ecommerce-project/index.php">
+    <i class="bi bi-star"></i> START
+</a>
+
         <!-- Mobile Button -->
         <button class="navbar-toggler"
                 type="button"
@@ -17,23 +18,18 @@
                 aria-label="Toggle navigation">
 
             <span class="navbar-toggler-icon"></span>
+
         </button>
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
-                <!-- Home -->
-                <li class="nav-item">
+                
 
-                    <a class="nav-link active text-white"
-                       href="/nti/Project2/index.php">
 
-                        Home
-
-                    </a>
-
-                </li>
                 <!-- Categories -->
                 <li class="nav-item dropdown">
 
@@ -51,7 +47,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/categories/add.php">
+                               href="/nti/FinalProject/ecommerce-project/categories/add.php">
 
                                 Add Category
 
@@ -59,8 +55,8 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item"
-                               href="/nti/Project2/categories/list.php">
+                           <a class="dropdown-item"
+                               href="/nti/FinalProject/ecommerce-project/categories/list.php">
 
                                 List Categories
 
@@ -88,18 +84,16 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\products\add.php">
+                             <a class="dropdown-item"
+                               href="/nti/FinalProject/ecommerce-project/products/add.php">
                                 Add Product
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\products\list.php">
-
+                               href="/nti/FinalProject/ecommerce-project/products/list.php">
                                 List Products
-
                             </a>
                         </li>
 
@@ -125,18 +119,52 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\clients\add.php">
-
+                               href="/nti/FinalProject/ecommerce-project/clients/add.php">
                                 Add Client
+                            </a>
+                        </li>
+
+                        <li>
+                             <a class="dropdown-item"
+                               href="/nti/FinalProject/ecommerce-project/clients/list.php">
+                                List Clients
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- Employees -->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle text-white"
+                       href=""
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+
+                        Employees
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="/nti/FinalProject/ecommerce-project/Employee/add.php">
+
+                                Add Employee
 
                             </a>
                         </li>
 
                         <li>
                             <a class="dropdown-item"
-                               href="nti\FinalProject\ecommerce-project\clients/list.php">
+                               href="/nti/FinalProject/ecommerce-project/Employee/list.php">
 
-                                List Clients
+                                List Employees
 
                             </a>
                         </li>
@@ -145,42 +173,6 @@
 
                 </li>
 
-<!-- Employees -->
-<li class="nav-item dropdown">
-
-    <a class="nav-link dropdown-toggle text-white"
-       href="#"
-       role="button"
-       data-bs-toggle="dropdown"
-       aria-expanded="false">
-
-        Employees
-
-    </a>
-
-    <ul class="dropdown-menu">
-
-        <li>
-            <a class="dropdown-item"
-               href="/nti/FinalProject/ecommerce-project/Employee/add.php">
-
-                Add Employee
-
-            </a>
-        </li>
-
-        <li>
-            <a class="dropdown-item"
-               href="/nti/FinalProject/ecommerce-project/Employee/list.php">
-
-                List Employees
-
-            </a>
-        </li>
-
-    </ul>
-
-</li>
 
                 <!-- Partners -->
                 <li class="nav-item dropdown">
@@ -208,7 +200,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/FinalProject/ecommerce-project/Partners/list.php">
+                               href="/nti/FinalProject/ecommerce-project/Partners/list.php"">
 
                                 List Partners
 
@@ -220,7 +212,6 @@
                 </li>
 
 
-                 
                 <!-- Brands -->
                 <li class="nav-item dropdown">
 
@@ -257,24 +248,14 @@
                     </ul>
 
                 </li>
+
+
             </ul>
-           <!-- Cart Button -->
-           <!-- Cart Button -->
-<a href="../cart.php" class="btn btn-primary border-light text-white me-1" title="Cart">
-    <i class="bi bi-cart3"></i>
-</a>
 
-<!-- Favourite / Wishlist Button -->
-<a href="../wishlist.php" class="btn btn-primary border-light text-white me-2" title="Favourite">
-    <i class="bi bi-heart"></i>
-</a>
 
-<!-- Login Button -->
-<a href="../login.php" class="btn btn-light text-primary fw-bold">
-    <i class="bi bi-person"></i>
-    Login
-</a>
-         
+            
+
+
         </div>
 
     </div>
