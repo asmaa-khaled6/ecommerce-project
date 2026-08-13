@@ -5,27 +5,49 @@ include('../shared/database.php');
 $successmessage="";
  $errormessage="";
 if(isset($_POST['btn'])){
-    $name=$_POST['cat_name'];
-    try{
+    
+   $name = $_POST['cat_name'];
 
-    if(strlen($name)<=3){
-         $errormessage=" Category Name Should be Greater Than 3 Character";
-    }else if(strlen($name)>20){
-  $errormessage=" Category Name Should be Less Than 20 Character";
-    }else{
+$image = $_FILES['cat_image']['name'];
+$tmpName = $_FILES['cat_image']['tmp_name'];
 
-    $InsertQuery=" INSERT INTO categories VALUES (NULL,'$name')";
-    $result=mysqli_query($conn, $InsertQuery);
-$successmessage=" Category added Successfully";
+try {
 
+    if(strlen($name) <= 3){
+
+        $errormessage = "Category Name Should be Greater Than 3 Character";
+
+    } else if(strlen($name) > 20){
+
+        $errormessage = "Category Name Should be Less Than 20 Character";
+
+    } else {
+
+        $uploadPath = "../images/categories/" . $image;
+
+        move_uploaded_file($tmpName, $uploadPath);
+
+        $InsertQuery = "INSERT INTO categories (name, image)
+                        VALUES ('$name', '$image')";
+
+        $result = mysqli_query($conn, $InsertQuery);
+
+        if($result){
+
+            $successmessage = "Category added Successfully";
+
+        } else {
+
+            $errormessage = "Category Failed" . mysqli_error($conn);
+
+        }
     }
-    }catch( Exception $e){
 
- $errormessage=" Category Failed".$e->getMessage();
-  
- 
-    }
-   
+} catch(Exception $e) {
+
+    $errormessage = "Category Failed " . $e->getMessage();
+
+}
 
 
 }
@@ -35,54 +57,105 @@ $successmessage=" Category added Successfully";
 
 
 <!--============== html===================== -->
+
 <?php
 include('../shared/open.php');
 include('../shared/nav.php');
 ?>
 
-
-
 <div class="container py-5">
-    <div class="row  justify-content-center ">
-        <div class="col-md-8 p-4 ">
-          <?php include('../shared/alert.php'); ?>
 
-   
+    <!-- Page Title -->
+    <div class="mb-4">
+        <h2 class="category-title">
+            <i class="bi bi-grid"></i>
+            Add New Category
+        </h2>
 
-           
-          <h1  class=" py-2 text-center"style=" color:#854EE4;">Add New Category </h1>
-            
-        </div>
+        <p class="text-secondary">
+            Create a new category for your store.
+        </p>
     </div>
-</div>
 
-<div class="container py-5 col-6"style=" background-color:#854EE4;"  >
-    <div class="row  justify-content-center ">
-        <div class="col-md-6 p-4 ">
 
-        <form action="" method="POST">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label text-white"> Category Name</label>
-    <input type="text" class="form-control" name="cat_name">
-  </div>
-  <div class="text-center ">
-  <button type="submit" class="btn  "style=" background-color:#FAF7FF; color:#854EE4;" name="btn" >Submit</button>
-</div>
-</form>
-          
-            
+    <!-- Alert -->
+    <?php include('../shared/alert.php'); ?>
+
+
+    <!-- Form Card -->
+    <div class="card border-0 shadow-sm">
+
+        <div class="card-body p-4">
+
+            <form action="" method="POST" enctype="multipart/form-data">
+
+                <!-- Category Name -->
+                <div class="mb-4">
+
+                    <label for="categoryName" class="form-label">
+                        Category Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        class="form-control"
+                        name="cat_name"
+                        placeholder="Enter category name"
+                        required
+                    >
+
+                </div>
+
+                <!-- Category Image-->
+                 <div class="mb-4">
+                    <label for="categoryImage" class="form-label">
+                      Category Image
+                    </label>
+                    <input
+                    type="file"
+                    id="categoryImage"
+                    class="form-control"
+                    name="cat_image"
+                    accept="image/*"
+                    required
+                    >
+                 </div>
+
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-end gap-2">
+                  <a href="./list.php" class="btn text-white "style="background-color:#2F8FEF"> 
+        <i class="bi bi-eye"></i>
+        View All
+    </a>
+
+
+                    <a href="./list.php" class="btn btn-light">
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn add-btn text-white"
+                        name="btn" style="background-color:#2F8FEF">
+
+                        <i class="bi bi-plus-lg"></i>
+                        Add Category
+
+                    </button>
+
+                </div>
+
+            </form>
+
         </div>
+
     </div>
+
 </div>
 
 
-    
-  
-
-
-
-  <?php
+<?php
 include('../shared/close.php');
-
-
 ?>

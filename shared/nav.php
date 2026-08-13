@@ -5,7 +5,7 @@
         <!-- Logo -->
         <a class="navbar-brand text-white fs-3 fw-bold"
    href="/nti/FinalProject/ecommerce-project/index.php">
-    <i class="bi bi-star"></i> START
+    <i class="bi bi-star"></i> STAR
 </a>
 
         <!-- Mobile Button -->
@@ -191,7 +191,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/partners/add.php">
+                               href="/nti/FinalProject/ecommerce-project/Partners/add.php">
 
                                 Add Partner
 
@@ -200,7 +200,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/partners/list.php">
+                               href="/nti/FinalProject/ecommerce-project/Partners/list.php">
 
                                 List Partners
 
@@ -229,7 +229,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/brands/add.php">
+                               href="/nti/FinalProject/ecommerce-project/brands/add.php">
 
                                 Add Brand
 
@@ -238,7 +238,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/brands/list.php">
+                               href="/nti/FinalProject/ecommerce-project/brands/list.php">
 
                                 List Brands
 

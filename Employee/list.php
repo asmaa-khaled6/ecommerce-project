@@ -2,34 +2,33 @@
 
 include('../shared/database.php');
 
-$successmessage="";
- $errormessage="";
+$successmessage = "";
+$errormessage = "";
 
-
-// delete category
+// Delete Employee
 if(isset($_GET['delete'])){
-    $id=$_GET['delete'];
+
+    $id = $_GET['delete'];
 
     try{
- $deletequey="DELETE FROM employees where id=$id";
-    $deleteresult=mysqli_query($conn,$deletequey);
-    if($deleteresult){
-        $successmessage="Deleted Successfully";
-    }else{
-         $errormessage=" Can Not Deleted";
-    }
 
+        $deletequery = "DELETE FROM employees WHERE id=$id";
+        $deleteresult = mysqli_query($conn, $deletequery);
+
+        if($deleteresult){
+            $successmessage = "Deleted Successfully";
+        }else{
+            $errormessage = "Can Not Deleted";
+        }
 
     }catch(Exception $e){
 
-
     }
-
-   
 }
-//all category
-$employeesquery=" SELECT * FROM employees";
-$employees=mysqli_query($conn,$employeesquery);
+
+// All Employees
+$employeesquery = "SELECT * FROM employees";
+$employees = mysqli_query($conn, $employeesquery);
 
 ?>
 
@@ -38,61 +37,177 @@ include('../shared/open.php');
 include('../shared/nav.php');
 ?>
 
-
-
 <div class="container py-5">
-    <div class="row  justify-content-center ">
-        <div class="col-md-6 p-4 ">
-            <?php include('../shared/alert.php');?>
-          <h1  class=" py-2 text-center"style=" color:#17365D;">List ALL Clients </h1>
-            
+
+    <?php include('../shared/alert.php'); ?>
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1 class="clients-title">
+                <i class="bi bi-person-badge-fill"></i>
+                List ALL Employees
+            </h1>
+
+            <p class="clients-subtitle">
+                Here are all the employees registered in the system.
+            </p>
         </div>
+
+        <a href="./add.php" class="add-client-btn px-2 border rounded-5">
+            <i class="bi bi-plus-lg"></i>
+            Add Employee
+        </a>
+
     </div>
-</div>
-<div class="container">
-    
-<div class="row justify-content-center">
-    <div class=" col-10  table-responsive rounded"style="background-color:#2F8FEF; padding:10px;">
-        <table class="table" >
-            <tr class="text-center" >
-                <th> ID</th>
-                 <th> Name</th>
-                  <th> Email</th>
-                 <th> address</th>
-                 <th> password</th>
-                 <th> gender</th>
-                 <th> age</th>
-                 <th> phone</th>
-                 
-                  <th> Action</th>
 
-            </tr>
-            <?php foreach($employees as $item){?>
-            <tr class="text-center">
-                <td><?php echo $item['id']?> </td>
-                 <td><?php echo $item['name']?></td>
-                 <td><?php echo $item['email']?></td>
-                  <td><?php echo $item['address']; ?></td>
-            <td><?php echo $item['password']; ?></td>
-            <td><?php echo $item['gender']; ?></td>
-            <td><?php echo $item['age']; ?></td>
-             <td><?php echo $item['phone']; ?></td>
 
-                  <td>
-                    <a class="mx-3 fs-4 text-danger" href=" Employee/list.php?delete=<?php echo $item['id']?>" ><i class="bi bi-trash"></i></a>
-<a class="mx-3 fs-4"
-   style="color:#854EE4"
-   href="/nti/FinalProject/ecommerce-project/Employee/edit.php?edit=<?php echo $item['id']; ?>">
-    <i class="bi bi-pencil-square"  style="color:#2F8FEF;"></i>
-</a>                     </td>
+    <!-- Employees Table Card -->
+    <div class="clients-card border">
 
-            </tr>
-            <?php }?>
-        </table>
+        <!-- Table -->
+        <div class="table-responsive">
+
+            <table class="table clients-table align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>EMPLOYEE</th>
+                        <th>EMAIL</th>
+                        <th>ADDRESS</th>
+                        <th>PASSWORD</th>
+                        <th>GENDER</th>
+                        <th>AGE</th>
+                        <th>PHONE</th>
+                        <th>ACTIONS</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                <?php foreach($employees as $item){ ?>
+
+                    <tr>
+
+                        <!-- ID -->
+                        <td>
+                            <span class="client-id">
+                                <?php echo $item['id']; ?>
+                            </span>
+                        </td>
+
+
+                        <!-- Employee -->
+                        <td>
+
+                            <div class="client-name">
+
+                                <div class="client-avatar">
+                                    <?php echo strtoupper(substr($item['name'],0,1)); ?>
+                                </div>
+
+                                <span>
+                                    <?php echo $item['name']; ?>
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- Email -->
+                        <td>
+                            <?php echo $item['email']; ?>
+                        </td>
+
+
+                        <!-- Address -->
+                        <td>
+
+                            <i class="bi bi-geo-alt location-icon"></i>
+
+                            <?php echo $item['address']; ?>
+
+                        </td>
+
+
+                        <!-- Password -->
+                        <td>
+
+                            <span class="password-text">
+                                <?php echo $item['password']; ?>
+                            </span>
+
+                        </td>
+
+
+                        <!-- Gender -->
+                        <td>
+
+                            <span class="gender-badge">
+                                <?php echo $item['gender']; ?>
+                            </span>
+
+                        </td>
+
+
+                        <!-- Age -->
+                        <td>
+                            <?php echo $item['age']; ?>
+                        </td>
+
+
+                        <!-- Phone -->
+                        <td>
+                            <?php echo $item['phone']; ?>
+                        </td>
+
+
+                        <!-- Actions -->
+                        <td>
+
+                            <a
+                                href="./edit.php?edit=<?php echo $item['id']; ?>"
+                                class="action-edit"
+                                title="Edit">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </a>
+
+
+                            <a
+                                href="./list.php?delete=<?php echo $item['id']; ?>"
+                                class="action-delete"
+                                title="Delete">
+
+                                <i class="bi bi-trash3"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                <?php } ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
     </div>
+
 </div>
-</div>
-  <?php
+
+
+<?php
 include('../shared/close.php');
-
 ?>

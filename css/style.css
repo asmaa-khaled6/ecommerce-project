@@ -352,3 +352,41 @@ body {
      border-bottom: 5px solid #1976d2  !important;
 }
 
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.carousel {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.card {
+    transition: 0.3s ease;
+      overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+/* Image Zoom */
+.card-img-top {
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
