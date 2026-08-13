@@ -1,5 +1,5 @@
 
-     <?php
+ <?php
 
 include('../shared/database.php');
 
