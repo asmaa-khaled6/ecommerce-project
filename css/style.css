@@ -64,3 +64,436 @@ body {
 .stat-card p {
     color: #17365D;
 }
+
+/* =========================CATEGORY========================= */
+
+.category-title {
+    color: #17365D;
+    font-weight: 600;
+}
+
+.category-title i {
+    color: #2F8FEF;
+    margin-right: 8px;
+}
+
+.add-btn {
+    background-color: #2F8FEF;
+    color: #FFFFFF;
+}
+
+.add-btn:hover {
+    background-color: #17365D;
+    color: #FFFFFF;
+}
+
+/* =========================CATEGORY LIST========================= */
+
+.category-table-head {
+    background-color: #DCEEFF;
+    color: #17365D;
+}
+
+.category-table-head th {
+    font-weight: 600;
+    padding: 15px;
+}
+
+.category-name {
+    color: #17365D;
+    font-weight: 500;
+}
+
+
+/* Edit Button */
+
+.edit-btn {
+    color: #2F8FEF;
+    border: 1px solid #2F8FEF;
+    background-color: #FFFFFF;
+}
+
+.edit-btn:hover {
+    background-color: #2F8FEF;
+    color: #FFFFFF;
+}
+
+.delete-btn {
+    background-color: #FFFFFF !important;
+    color: #DC3545 !important;
+    border: 1px solid #DC3545 !important;
+}
+
+.delete-btn i {
+    color: #DC3545 !important;
+}
+
+.delete-btn:hover {
+    background-color: #DC3545 !important;
+    color: #FFFFFF !important;
+}
+
+.delete-btn:hover i {
+    color: #FFFFFF !important;
+}
+
+/* =========================CUSTOMER CATEGORIES========================= */
+
+.categories-section {
+    background-color: #F5F7FA;
+    min-height: 100vh;
+}
+
+.categories-subtitle {
+    color: #2F8FEF;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.categories-title {
+    color: #17365D;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.categories-description {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+
+/* Category Card */
+
+.category-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #DCEEFF;
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(23, 54, 93, 0.10);
+}
+
+
+/* Image */
+
+.category-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Title */
+
+.category-card-title {
+    color: #17365D;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+/* Description */
+
+.category-card-text {
+    color: #6c757d;
+    font-size: 14px;
+    min-height: 42px;
+}
+
+
+/* Link */
+
+.category-link {
+    color: #2F8FEF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-link:hover {
+    color: #17365D;
+}
+
+.category-link i {
+    margin-left: 5px;
+}
+
+.category-table-image {
+    width  : 50px  !important;
+    height: 50px  !important;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+}
+
+.edit-category-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #DCEEFF;
+}
+
+/* =========================PRODUCT FORM========================= */
+
+.product-form-section {
+    background-color: #F5F7FA;
+    min-height: 100vh;
+}
+
+.product-form-subtitle {
+    color: #2F8FEF;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.product-form-title {
+    color: #17365D;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.product-form-text {
+    color: #6c757d;
+}
+
+
+/* Form Card */
+
+.product-form-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DCEEFF;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(23, 54, 93, 0.08);
+}
+
+
+/* Labels */
+
+.product-form-card .form-label {
+    color: #17365D;
+    font-weight: 600;
+}
+
+
+/* Inputs */
+
+.product-form-card .form-control,
+.product-form-card .form-select {
+    border: 1px solid #DCEEFF;
+    border-radius: 8px;
+    padding: 11px 13px;
+}
+
+
+.product-form-card .form-control:focus,
+.product-form-card .form-select:focus {
+    border-color: #2F8FEF;
+    box-shadow: 0 0 0 0.2rem rgba(47, 143, 239, 0.15);
+}
+
+
+/* Price icon */
+
+.product-form-card .input-group-text {
+    background-color: #DCEEFF;
+    color: #17365D;
+    border: 1px solid #DCEEFF;
+    font-weight: 600;
+}
+
+
+/* Image input */
+
+.product-form-card input[type="file"] {
+    background-color: #F5F7FA;
+}
+
+
+/* Add Product Button */
+
+.product-add-btn {
+    background-color: #2F8FEF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 600;
+}
+
+
+.product-add-btn:hover {
+    background-color: #17365D;
+    color: #FFFFFF;
+}
+
+
+/* Cancel Button */
+
+.product-cancel-btn {
+    background-color: #F5F7FA;
+    color: #17365D;
+    border: 1px solid #DCEEFF;
+    border-radius: 8px;
+    padding: 10px 22px;
+}
+
+
+.product-cancel-btn:hover {
+    background-color: #DCEEFF;
+    color: #17365D;
+}
+
+/* =========================PRODUCTS========================= */
+
+.products-section {
+    background-color: #F5F7FA;
+    min-height: 100vh;
+}
+
+.products-subtitle {
+    color: #2F8FEF;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.products-title {
+    color: #17365D;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.products-text {
+    color: #6c757d;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DCEEFF;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 54, 93, 0.12);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #F5F7FA;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   CARD BODY
+========================= */
+
+.product-card-body {
+    padding: 20px;
+}
+
+.product-category {
+    color: #2F8FEF;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.product-name {
+    color: #17365D;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+
+    /* keep cards same height */
+    height: 42px;
+    overflow: hidden;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.product-rating {
+    margin-bottom: 15px;
+}
+
+.product-rating i {
+    color: #F4C95D;
+    margin-right: 2px;
+}
+
+
+/* =========================
+   PRICE + VIEW
+========================= */
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    color: #17365D;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.product-view-btn {
+    color: #2F8FEF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.product-view-btn:hover {
+    color: #17365D;
+}

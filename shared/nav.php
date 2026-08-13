@@ -56,7 +56,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/categories/add.php">
+                               href="/nti/FinalProject/ecommerce-project/categories/add.php">
 
                                 Add Category
 
@@ -65,7 +65,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/categories/list.php">
+                               href="/nti/FinalProject/ecommerce-project/categories/list.php">
 
                                 List Categories
 
@@ -94,7 +94,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/products/add.php">
+                               href="/nti/FinalProject/ecommerce-project/products/add.php">
 
                                 Add Product
 
@@ -103,7 +103,7 @@
 
                         <li>
                             <a class="dropdown-item"
-                               href="/nti/Project2/products/list.php">
+                               href="/nti/FinalProject/ecommerce-project/products/list.php">
 
                                 List Products
 
