@@ -1,5 +1,6 @@
-<?php
 
+
+<?php
 include('../shared/database.php');
 //add new category========================
 $successmessage="";
