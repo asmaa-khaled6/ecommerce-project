@@ -10,8 +10,8 @@ $categoryQuery = "SELECT * FROM categories";
 $categories = mysqli_query($conn, $categoryQuery);
 
 /*GEt Brands*/
-//$brandQuery = "SELECT * FROM brands";
-//$brands = mysqli_query($conn, $brandQuery);
+$brandQuery = "SELECT * FROM brands";
+$brands = mysqli_query($conn, $brandQuery);
 
 
 /* Add New Product */
@@ -51,9 +51,9 @@ if (isset($_POST['btn'])) {
         } else {
 
             $InsertQuery = "INSERT INTO products 
-            (name, price, description, Quantity_avaliable, category_id, image)
+            (name, price, description, Quantity_avaliable, category_id, image , brand_id)
             VALUES 
-            ('$name', '$price', '$description', '$quantity', '$cat_id', '$image')";
+            ('$name', '$price', '$description', '$quantity', '$cat_id', '$image', '$brand_id')";
 
             $result = mysqli_query($conn, $InsertQuery);
 
@@ -234,7 +234,7 @@ include('../shared/nav.php');
                         </div>
 
           <!-- ==================Brand====================== -->
-                 <!--
+                 
                   <div class="mb-4">
 
                    <label class="form-label">
@@ -261,7 +261,7 @@ include('../shared/nav.php');
 
                    </select>
 
-                  </div>-->
+                  </div>
 
 
                         <!-- Buttons -->

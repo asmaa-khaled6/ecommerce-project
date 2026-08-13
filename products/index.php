@@ -3,19 +3,35 @@
 include('../shared/database.php');
 
 /* Get all products with their categories */
+if (isset($_GET['category'])) {
 
-$productQuery = "
-    SELECT 
-        products.*,
-        categories.name AS category_name
-    FROM products
-    LEFT JOIN categories
-        ON products.category_id = categories.id
-    ORDER BY products.id DESC
-";
+    $category_id = $_GET['category'];
+
+    $productQuery = "
+        SELECT 
+            products.*,
+            categories.name AS category_name
+        FROM products
+        LEFT JOIN categories
+            ON products.category_id = categories.id
+        WHERE products.category_id = $category_id
+        ORDER BY products.id DESC
+    ";
+
+} else {
+
+    $productQuery = "
+        SELECT 
+            products.*,
+            categories.name AS category_name
+        FROM products
+        LEFT JOIN categories
+            ON products.category_id = categories.id
+        ORDER BY products.id DESC
+    ";
+}
 
 $products = mysqli_query($conn, $productQuery);
-
 ?>
 
 <?php
@@ -76,12 +92,7 @@ include('../shared/nav.php');
                             <img
                                 src="../images/products/<?php echo $product['image']; ?>"
                                 alt="<?php echo $product['name']; ?>"
-                                style="
-                                width: 100%;
-                                height: 250px;
-                                object-fit: cover;
-                                display: block;
-                                "
+                               
                             >
 
                         </div>
@@ -103,6 +114,9 @@ include('../shared/nav.php');
                                 <?php echo $product['name']; ?>
 
                             </h4>
+                            <p class="product-description">
+                               <?php echo $product['description']; ?>
+                            </p>
 
 
                             <!-- Rating -->
@@ -111,7 +125,7 @@ include('../shared/nav.php');
 
                                 <?php
 
-                                $rating = $product['rating'];
+                                $rating = 4 ;
 
                                 for($i = 1; $i <= 5; $i++){
 
