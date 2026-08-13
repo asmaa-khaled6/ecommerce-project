@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 include('../shared/database.php');
@@ -48,75 +51,143 @@ include('../shared/nav.php');
 
 
 <div class="container py-5">
-    <div class="row  justify-content-center ">
-        <div class="col-md-6 p-4 ">
-            <?php include('../shared/alert.php');?>
-          <h1  class=" py-2 text-center"style=" color:#854EE4;">List ALL Clients </h1>
-            
+
+    <?php include('../shared/alert.php'); ?>
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1 class="clients-title">
+                <i class="bi bi-people-fill"></i>
+                List ALL Clients
+            </h1>
+
+            <p class="clients-subtitle">
+                Here are all the clients registered in the system.
+            </p>
         </div>
-    </div>
-</div>
-<div class="container">
-    
-<div class="row justify-content-center">
-    <div class=" col-10  table-responsive rounded"style="background-color:#854EE4; padding:10px;">
-        <table class="table" >
-            <tr class="text-center" >
-                <th> ID</th>
-                 <th> Name</th>
-                  <th> Email</th>
-                 <th> address</th>
-                 <th> password</th>
-                 <th> gender</th>
-                 <th> age</th>
-                 <th> phone</th>
-                 
 
-                  <th> Action</th>
-
-            </tr>
-            <?php foreach($clients as $item){?>
-            <tr class="text-center">
-                <td><?php echo $item['id']?> </td>
-                 <td><?php echo $item['name']?></td>
-                 <td><?php echo $item['email']?></td>
-                  <td><?php echo $item['address']; ?></td>
-            <td><?php echo $item['Passva']; ?></td>
-            <td><?php echo $item['gender']; ?></td>
-            <td><?php echo $item['age']; ?></td>
-             <td><?php echo $item['phone']; ?></td>
-
-
-
-
-
-
-
-
-
-
-
-
-                  <td>
-                    <a class="mx-3 fs-4 text-danger" href=" ./list.php?delete=<?php echo $item['id']?>" ><i class="bi bi-trash"></i></a>
-                       <a class="mx-3 fs-4" style="color:#854EE4" href=" ./edit.php?edit=<?php echo $item['id']?>"><i class="bi bi-pencil-square"></i> </a>
-                     </td>
-
-            </tr>
-            <?php }?>
-
-
-
-        </table>
-
-
+        <a href="./add.php" class="add-client-btn  px-2 border rounded-5">
+            <i class="bi bi-plus-lg"></i>
+            Add Client
+        </a>
 
     </div>
-</div>
-</div>
-    
-  
 
+
+    <!-- Clients Table Card -->
+    <div class="clients-card border">
+
+        
+
+
+        <!-- Table -->
+        <div class="table-responsive">
+
+            <table class="table clients-table align-middle">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CLIENT</th>
+                        <th>EMAIL</th>
+                        <th>ADDRESS</th>
+                        <th>PASSWORD</th>
+                        <th>GENDER</th>
+                        <th>AGE</th>
+                        <th>PHONE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                <?php foreach($clients as $item){ ?>
+
+                    <tr>
+
+                        <td>
+                            <span class="client-id">
+                                <?php echo $item['id']; ?>
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="client-name">
+                                <div class="client-avatar">
+                                    <?php echo strtoupper(substr($item['name'],0,1)); ?>
+                                </div>
+
+                                <span>
+                                    <?php echo $item['name']; ?>
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <?php echo $item['email']; ?>
+                        </td>
+
+                        <td>
+                            <i class="bi bi-geo-alt location-icon"></i>
+                            <?php echo $item['address']; ?>
+                        </td>
+
+                        <td>
+                            <span class="password-text">
+                                <?php echo $item['password']; ?>
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="gender-badge">
+                                <?php echo $item['gender']; ?>
+                            </span>
+                        </td>
+
+                        <td>
+                            <?php echo $item['age']; ?>
+                        </td>
+
+                        <td>
+                            <?php echo $item['phone']; ?>
+                        </td>
+
+                        <td>
+
+                            <a href="./edit.php?edit=<?php echo $item['id']; ?>"
+                               class="action-edit"
+                               title="Edit">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </a>
+
+
+                            <a href="./list.php?delete=<?php echo $item['id']; ?>"
+                               class="action-delete"
+                               title="Delete">
+
+                                <i class="bi bi-trash3"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                <?php } ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
 
 
   <?php
