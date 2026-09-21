@@ -1,4 +1,6 @@
 <?php
+include('../shared/permissions.php');
+adminOnly();
 include '../shared/database.php';
 
 if (!isset($conn) && isset($db)) { $conn = $db; }

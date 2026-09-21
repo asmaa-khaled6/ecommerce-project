@@ -1,155 +1,205 @@
 <?php
 
+include('../shared/permissions.php');
+
 include('../shared/database.php');
 
-$successmessage="";
- $errormessage="";
+$successmessage = "";
+$errormessage = "";
 
 
-// delete category
-if(isset($_GET['delete'])){
-    $id=$_GET['delete'];
-    try{
- $deletequey="DELETE FROM categories where id=$id";
-    $deleteresult=mysqli_query($conn,$deletequey);
-    if($deleteresult){
-        $successmessage="Deleted Successfully";
-    }else{
-         $errormessage=" Can Not Deleted";
+// ================= Delete Category =================
+
+if (isAdmin() && isset($_GET['delete'])) {
+
+    $id = $_GET['delete'];
+
+    try {
+
+        $deletequey = "DELETE FROM categories WHERE id=$id";
+
+        $deleteresult = mysqli_query($conn, $deletequey);
+
+        if ($deleteresult) {
+
+            $successmessage = "Deleted Successfully";
+
+        } else {
+
+            $errormessage = "Can Not Deleted";
+
+        }
+
+    } catch (Exception $e) {
+
+        $errormessage = "Can Not Deleted";
+
     }
-
-
-    }catch(Exception $e){
-
-
-    }
-
-   
 }
-//all category
-$clientsquery=" SELECT * FROM categories";
-$categories=mysqli_query($conn,$clientsquery);
+
+
+// ================= All Categories =================
+
+$clientsquery = "SELECT * FROM categories";
+
+$categories = mysqli_query($conn, $clientsquery);
 
 ?>
 
 <?php
+
 include('../shared/open.php');
+
 include('../shared/nav.php');
+
 ?>
+
 
 <div class="container py-5">
 
+
     <!-- Page Header -->
+
     <div class="d-flex justify-content-between align-items-center mb-4">
 
         <div>
+
             <h2 class="category-title mb-1">
+
                 <i class="bi bi-grid"></i>
+
                 All Categories
+
             </h2>
 
             <p class="text-secondary mb-0">
+
                 Manage your store categories.
+
             </p>
+
         </div>
 
-        <a href="./add.php" class="btn add-btn">
-            <i class="bi bi-plus-lg"></i>
-            Add Category
-        </a>
+
+        <!-- Add Category - Admin Only -->
+
+        <?php if (isAdmin()) { ?>
+
+            <a
+                href="./add.php"
+                class="btn add-btn btn-info"
+            >
+
+                <i class="bi bi-plus-lg"></i>
+
+                Add Category
+
+            </a>
+
+        <?php } ?>
 
     </div>
 
 
     <!-- Alert Messages -->
+
     <?php include('../shared/alert.php'); ?>
 
 
-    <!-- Categories Table -->
-    <div class="card border-0 shadow-sm">
+    <!-- Categories Cards -->
 
-        <div class="card-body p-0">
+    <div class="row g-4">
 
-            <div class="table-responsive">
+        <?php foreach ($categories as $item) { ?>
 
-                <table class="table table-hover align-middle mb-0" category-table>
+            <div class="col-lg-3 col-md-4 col-sm-6">
 
-                    <thead class="category-table-head">
-
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Category Name</th>
-                            <th scope="col" class="text-center">Actions</th>
-                        </tr>
-
-                    </thead>
+                <div class="card h-100 border-0 shadow-sm">
 
 
-                    <tbody>
+                    <!-- Category Image -->
 
-                        <?php foreach($categories as $item){ ?>
-
-                            <tr>
-
-                                <td>
-                                    <?php echo $item['id']; ?>
-                                </td>
-                                <td >
-                                 <img
-                                   src="../images/categories/<?php echo $item['image']; ?>"
-                                   alt="<?php echo $item['name']; ?>"
-                                   class="category-table-image"
-                                   style="width: 70px; height:70px; object-fit: cover; border-radius:8px ; position:relative; left:-65px;"
-                                  >
-                                </td>
-
-                                <td class="category-name">
-                                    <?php echo $item['name']; ?>
-                                </td>
-
-                                <td class="text-center">
-
-                                    <!-- Edit -->
-                                    <a
-                                        href="./edit.php?edit=<?php echo $item['id']; ?>"
-                                        class="btn btn-sm edit-btn me-2">
-
-                                        <i class="bi bi-pencil-square"></i>
-                                        Edit
-
-                                    </a>
+                    <img
+                        src="../images/categories/<?php echo $item['image']; ?>"
+                        alt="<?php echo $item['name']; ?>"
+                        class="card-img-top"
+                        style="width: 100%; height: 220px; object-fit: cover;"
+                    >
 
 
-                                    <!-- Delete -->
-                                    <a
-                                        href="./list.php?delete=<?php echo $item['id']; ?>"
-                                        class="btn btn-sm delete-btn">
+                    <div class="card-body text-center p-3">
 
-                                        <i class="bi bi-trash"></i>
-                                        Delete
 
-                                    </a>
+                        <!-- Category Name -->
 
-                                </td>
+                        <h5 class="card-title mb-3">
 
-                            </tr>
+                            <?php echo $item['name']; ?>
+
+                        </h5>
+
+
+                        <!-- ID -->
+
+                        <p class="text-secondary small mb-3">
+
+                            ID: <?php echo $item['id']; ?>
+
+                        </p>
+
+
+                        <!-- Actions - Admin Only -->
+
+                        <?php if (isAdmin()) { ?>
+
+                            <!-- Edit -->
+
+                            <a
+                                href="./edit.php?edit=<?php echo $item['id']; ?>"
+                                class="btn btn-sm edit-btn me-2"
+                                style="background-color:#2F8FEF"
+                            >
+
+                                <i class="bi bi-pencil-square"></i>
+
+                                Edit
+
+                            </a>
+
+
+                            <!-- Delete -->
+
+                            <a
+                                href="./list.php?delete=<?php echo $item['id']; ?>"
+                                class="btn btn-sm delete-btn btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this category?')"
+                            >
+
+                                <i class="bi bi-trash"></i>
+
+                                Delete
+
+                            </a>
 
                         <?php } ?>
 
-                    </tbody>
 
-                </table>
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
+        <?php } ?>
 
     </div>
+
 
 </div>
 
 
 <?php
+
 include('../shared/close.php');
+
 ?>

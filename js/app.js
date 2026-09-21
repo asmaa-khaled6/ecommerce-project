@@ -1,19 +1,27 @@
 const togglePassword = document.getElementById("togglePassword");
 const password = document.getElementById("password");
 
-togglePassword.addEventListener("click", function () {
+if (togglePassword && password) {
 
-    if (password.type === "password") {
-        password.type = "text";
+    togglePassword.addEventListener("click", function () {
 
-        this.classList.remove("bi-eye");
-        this.classList.add("bi-eye-slash");
+        if (password.type === "password") {
 
-    } else {
-        password.type = "password";
+            password.type = "text";
 
-        this.classList.remove("bi-eye-slash");
-        this.classList.add("bi-eye");
-    }
+            this.classList.remove("bi-eye");
+            this.classList.add("bi-eye-slash");
 
-});
+        } else {
+
+            password.type = "password";
+
+            this.classList.remove("bi-eye-slash");
+            this.classList.add("bi-eye");
+
+        }
+
+    });
+
+}
+

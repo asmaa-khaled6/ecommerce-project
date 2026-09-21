@@ -1,5 +1,6 @@
 <?php
-
+include('../shared/permissions.php');
+adminOnly();
 include('../shared/database.php');
 
 $successmessage = "";
@@ -355,6 +356,7 @@ function togglePassword() {
 }
 
 </script>
+
 
 <?php
 include('../shared/close.php');

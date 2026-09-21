@@ -1,4 +1,6 @@
 <?php
+include('../shared/permissions.php');
+adminOnly();
 
 include('../shared/database.php');
 
@@ -28,7 +30,7 @@ if (isset($_POST['btn'])) {
     $uploadPath = "../images/products/" . $image;
 
     move_uploaded_file($tmpName, $uploadPath);
-    //$brand_id = $_POST['brand_id'];
+    $brand_id = $_POST['brand_id'];
 
     try {
 
@@ -267,6 +269,15 @@ include('../shared/nav.php');
                         <!-- Buttons -->
 
                         <div class="d-flex justify-content-end gap-2">
+
+    <a 
+        href="list.php" 
+        class="btn text-white" 
+        style="background-color:#2F8FEF;"
+    > 
+        <i class="bi bi-eye"></i>
+        View All
+    </a>
 
                             <a
                                 href="list.php"

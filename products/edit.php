@@ -1,5 +1,6 @@
 <?php
-
+include('../shared/permissions.php');
+adminOnly();
 include('../shared/database.php');
 
 $successmessage = "";
@@ -41,6 +42,9 @@ $categoryQuery = "SELECT * FROM categories";
 $categories = mysqli_query($conn, $categoryQuery);
 
 
+
+
+
 /* ================= UPDATE PRODUCT ================= */
 
 if(isset($_POST['btn'])){
@@ -50,6 +54,7 @@ if(isset($_POST['btn'])){
     $description = $_POST['description'];
     $quantity = $_POST['quantity'];
     $cat_id = $_POST['cat_id'];
+  
 
     try{
 
@@ -312,30 +317,9 @@ include('../shared/nav.php');
                         </div>
 
 
-                        <!-- Brand - TEMPORARILY COMMENTED -->
+                        
 
-                        <!--
 
-                        <div class="mb-3">
-
-                            <label class="form-label">
-                                Brand
-                            </label>
-
-                            <select
-                                class="form-select"
-                                name="brand_id"
-                            >
-
-                                <option value="">
-                                    Select Brand
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                        -->
 
 
                         <!-- Current Image -->

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./shared/database.php');
 include('./shared/open.php');
 
@@ -24,6 +25,14 @@ $allclient=mysqli_query($conn,$clientquery);
 $row = mysqli_fetch_assoc($allclient);
 $clientCount = $row['total'];
 
+
+$categoryCardsQuery = "SELECT * FROM categories";
+$categoryCards = mysqli_query($conn, $categoryCardsQuery);
+
+
+$productCardsQuery = "SELECT * FROM products";
+$productCards = mysqli_query($conn, $productCardsQuery);
+
 ?>
 
 <link rel="stylesheet" href="./css/style.css">
@@ -33,7 +42,7 @@ $clientCount = $row['total'];
 
         <div class="row align-items-center">
 
-            <!-- Welcome -->
+         
             <div class="col-lg-6">
 
                 <p class="welcome-subtitle">
@@ -50,13 +59,13 @@ $clientCount = $row['total'];
                     Shop our latest products with the best prices.
                 </p>
 
-                <a href="#" class="btn shop-btn">
+                <a href="/nti/FinalProject/ecommerce-project/products/list.php" class="btn shop-btn">
                     Shop Now
                     <i class="bi bi-arrow-right"></i>
                 </a>
 
 
-                <!-- Statistics -->
+               
                 <div class="row stats-row mt-5">
 
                     <!-- Categories -->
@@ -131,11 +140,135 @@ $clientCount = $row['total'];
     </div>
 
 </section>
-  
 
 
+
+  <!-- Categories Section -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h2 style="color: #2F8FEF;">Categories</h2>
+            <p class="text-secondary">
+                Explore our categories
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <?php foreach($categoryCards as $category){ ?>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+
+                    <div class="card h-100 border-0 shadow-sm">
+
+                        <img
+                            src="./images/categories/<?php echo $category['image']; ?>"
+                            class="card-img-top"
+                            alt="<?php echo $category['name']; ?>"
+                           style="width: 100%; height: 220px; object-fit: cover;"
+                        >
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                <?php echo $category['name']; ?>
+                            </h5>
+                             <a href="/nti/FinalProject/ecommerce-project/categories/list.php" class="btn btn-primary mt-2 rounded-4">
+                                  View Category
+                                   </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Products Section -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-4">
+
+            <h2 style="color: #2F8FEF;">Products</h2>
+
+            <p class="text-secondary">
+                Discover our latest products
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <?php foreach($productCards as $product){ ?>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+
+                    <div class="card h-100 border-0 shadow-sm">
+
+                        <img
+                            src="./images/products/<?php echo $product['image']; ?>"
+                            class="card-img-top"
+                            alt="<?php echo $product['name']; ?>"
+                            style="width: 100%; height: 220px; object-fit: cover;"
+                        >
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                <?php echo $product['name']; ?>
+                            </h5>
+
+                            <p class="text-primary fw-bold mb-0">
+                                <?php echo $product['price']; ?> EGP
+                            </p>
+                            
+                            <!-- Rating -->
+                            <!-- Rating -->
+<!-- Rating -->
+<div style="color:#FFD700; font-size:28px; text-align:center; margin:10px 0;">
+    ★★★★★
+</div>
+                            <a href="/nti/FinalProject/ecommerce-project/products/list.php"
+       class="btn btn-primary rounded-4">
+        <i class="bi bi-eye"></i>
+        View Product
+    </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script src="./js/app.js"></script>
 
   <?php
+
+  
 include('./shared/close.php');
 
 

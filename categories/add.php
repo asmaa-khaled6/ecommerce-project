@@ -1,6 +1,6 @@
-
-
 <?php
+include('../shared/permissions.php');
+adminOnly();
 include('../shared/database.php');
 //add new category========================
 $successmessage="";
@@ -126,6 +126,11 @@ include('../shared/nav.php');
 
                 <!-- Buttons -->
                 <div class="d-flex justify-content-end gap-2">
+                  <a href="./list.php" class="btn text-white "style="background-color:#2F8FEF"> 
+        <i class="bi bi-eye"></i>
+        View All
+    </a>
+
 
                     <a href="./list.php" class="btn btn-light">
                         Cancel
@@ -133,8 +138,8 @@ include('../shared/nav.php');
 
                     <button
                         type="submit"
-                        class="btn add-btn"
-                        name="btn">
+                        class="btn add-btn text-white"
+                        name="btn" style="background-color:#2F8FEF">
 
                         <i class="bi bi-plus-lg"></i>
                         Add Category
