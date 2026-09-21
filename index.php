@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./shared/database.php');
 include('./shared/open.php');
 
@@ -25,11 +26,10 @@ $row = mysqli_fetch_assoc($allclient);
 $clientCount = $row['total'];
 
 
-// Get all categories
 $categoryCardsQuery = "SELECT * FROM categories";
 $categoryCards = mysqli_query($conn, $categoryCardsQuery);
 
-// Get all products
+
 $productCardsQuery = "SELECT * FROM products";
 $productCards = mysqli_query($conn, $productCardsQuery);
 
@@ -42,7 +42,7 @@ $productCards = mysqli_query($conn, $productCardsQuery);
 
         <div class="row align-items-center">
 
-            <!-- Welcome -->
+         
             <div class="col-lg-6">
 
                 <p class="welcome-subtitle">
@@ -65,7 +65,7 @@ $productCards = mysqli_query($conn, $productCardsQuery);
                 </a>
 
 
-                <!-- Statistics -->
+               
                 <div class="row stats-row mt-5">
 
                     <!-- Categories -->
@@ -160,7 +160,7 @@ $productCards = mysqli_query($conn, $productCardsQuery);
 
             <?php foreach($categoryCards as $category){ ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
 
                     <div class="card h-100 border-0 shadow-sm">
 
@@ -176,7 +176,7 @@ $productCards = mysqli_query($conn, $productCardsQuery);
                             <h5 class="card-title">
                                 <?php echo $category['name']; ?>
                             </h5>
-                             <a href="/nti/FinalProject/ecommerce-project/categories/list.php" class="btn btn-primary mt-2">
+                             <a href="/nti/FinalProject/ecommerce-project/categories/list.php" class="btn btn-primary mt-2 rounded-4">
                                   View Category
                                    </a>
 
@@ -215,7 +215,7 @@ $productCards = mysqli_query($conn, $productCardsQuery);
 
             <?php foreach($productCards as $product){ ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
 
                     <div class="card h-100 border-0 shadow-sm">
 
@@ -235,9 +235,15 @@ $productCards = mysqli_query($conn, $productCardsQuery);
                             <p class="text-primary fw-bold mb-0">
                                 <?php echo $product['price']; ?> EGP
                             </p>
-
+                            
+                            <!-- Rating -->
+                            <!-- Rating -->
+<!-- Rating -->
+<div style="color:#FFD700; font-size:28px; text-align:center; margin:10px 0;">
+    ★★★★★
+</div>
                             <a href="/nti/FinalProject/ecommerce-project/products/list.php"
-       class="btn btn-primary">
+       class="btn btn-primary rounded-4">
         <i class="bi bi-eye"></i>
         View Product
     </a>
@@ -258,7 +264,11 @@ $productCards = mysqli_query($conn, $productCardsQuery);
 
 
 
+<script src="./js/app.js"></script>
+
   <?php
+
+  
 include('./shared/close.php');
 
 

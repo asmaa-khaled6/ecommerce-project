@@ -1,5 +1,6 @@
 <?php
-
+include('../shared/permissions.php');
+adminOnly();
 include('../shared/database.php');
 //add new category========================
 $successmessage="";
@@ -214,10 +215,7 @@ include('../shared/nav.php');
                     </div>
 
 
-                    
-
-
-                  
+          
                    
 
                 </div>

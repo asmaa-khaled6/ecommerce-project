@@ -1,13 +1,16 @@
 <?php
 
+include('../shared/permissions.php');
+
 include('../shared/database.php');
 
 $successmessage = "";
 $errormessage = "";
 
 
-// Delete Brand
-if (isset($_POST['delete_brand'])) {
+// ================= Delete Brand =================
+
+if (isAdmin() && isset($_POST['delete_brand'])) {
 
     $id = (int) $_POST['brand_id'];
 
@@ -22,28 +25,36 @@ if (isset($_POST['delete_brand'])) {
     } else {
 
         $errormessage = "Brand Delete Failed";
+
     }
 }
 
 
-// Get Brands
+// ================= Get Brands =================
+
 $query = "SELECT * FROM brands";
 
 $result = mysqli_query($conn, $query);
 
-
 ?>
+
 
 <?php
+
 include('../shared/open.php');
+
 include('../shared/nav.php');
+
 ?>
 
+
 <div class="container py-5">
+
 
     <!-- Header -->
 
     <div class="d-flex justify-content-between align-items-center mb-4">
+
 
         <div>
 
@@ -53,28 +64,44 @@ include('../shared/nav.php');
 
             </h1>
 
+
             <p class="text-secondary fs-5 mb-0">
+
                 View and manage all brands.
+
             </p>
 
         </div>
 
 
-        <a href="add.php" class="btn btn-primary">
+        <!-- Add Brand - Admin Only -->
 
-            <i class="fa-solid fa-plus me-1"></i>
+        <?php if (isAdmin()) { ?>
 
-            Add New Brand
+            <a
+                href="add.php"
+                class="btn btn-primary"
+            >
 
-        </a>
+                <i class="fa-solid fa-plus me-1"></i>
+
+                Add New Brand
+
+            </a>
+
+        <?php } ?>
+
 
     </div>
-<?php include('../shared/alert.php');
- ?>
+
+
+    <?php include('../shared/alert.php'); ?>
+
 
     <!-- Brands Cards -->
 
     <div class="row g-4">
+
 
         <?php
 
@@ -84,9 +111,12 @@ include('../shared/nav.php');
 
         ?>
 
+
                 <div class="col-md-6 col-lg-4">
 
+
                     <div class="card h-100 shadow-sm border-0">
+
 
                         <!-- Image -->
 
@@ -99,6 +129,7 @@ include('../shared/nav.php');
 
 
                         <div class="card-body text-center">
+
 
                             <!-- Brand Name -->
 
@@ -113,45 +144,76 @@ include('../shared/nav.php');
 
 
                             <!-- View Products -->
-<a
-    href="../products/list.php?brand_id=<?php echo $brand['id']; ?>"
-    class="btn btn-primary w-100 mb-2">
-    View Products
-</a>
+
+                            <a
+                                href="../products/list.php?brand_id=<?php echo $brand['id']; ?>"
+                                class="btn btn-primary w-100 mb-2"
+                            >
+
+                                View Products
+
+                            </a>
 
 
-                            <!-- Edit & Delete -->
+                            <!-- Edit & Delete - Admin Only -->
 
-                            <div class="d-flex gap-2">     
-   <a href="edit.php?id=<?php echo $brand['id']; ?>"
-    class="btn btn-outline-primary w-50">
-    Edit
-</a>
-<form method="POST" class="w-50">
+                            <?php if (isAdmin()) { ?>
 
-    <input
-        type="hidden"
-        name="brand_id"
-        value="<?php echo $brand['id']; ?>"
-    >
+                                <div class="d-flex gap-2">
 
-    <button
-        type="submit"
-        name="delete_brand"
-        class="btn btn-outline-danger w-100"
-        onclick="return confirm('Are you sure you want to delete this brand?');"> Delete
 
-    </button>
+                                    <!-- Edit -->
 
-</form>
+                                    <a
+                                        href="edit.php?id=<?php echo $brand['id']; ?>"
+                                        class="btn btn-outline-primary w-50"
+                                    >
 
-                            </div>
+                                        Edit
+
+                                    </a>
+
+
+                                    <!-- Delete -->
+
+                                    <form
+                                        method="POST"
+                                        class="w-50"
+                                    >
+
+                                        <input
+                                            type="hidden"
+                                            name="brand_id"
+                                            value="<?php echo $brand['id']; ?>"
+                                        >
+
+
+                                        <button
+                                            type="submit"
+                                            name="delete_brand"
+                                            class="btn btn-outline-danger w-100"
+                                            onclick="return confirm('Are you sure you want to delete this brand?');"
+                                        >
+
+                                            Delete
+
+                                        </button>
+
+
+                                    </form>
+
+
+                                </div>
+
+                            <?php } ?>
+
 
                         </div>
 
                     </div>
 
                 </div>
+
 
         <?php
 
@@ -160,6 +222,7 @@ include('../shared/nav.php');
         } else {
 
         ?>
+
 
             <div class="col-12">
 
@@ -171,16 +234,21 @@ include('../shared/nav.php');
 
             </div>
 
+
         <?php
 
         }
 
         ?>
 
+
     </div>
 
 </div>
 
+
 <?php
+
 include('../shared/close.php');
+
 ?>

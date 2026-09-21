@@ -1,4 +1,6 @@
 <?php
+include('../shared/permissions.php');
+adminOnly();
 
 include('../shared/database.php');
 

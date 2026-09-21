@@ -1,4 +1,5 @@
 <?php
+include('../shared/permissions.php');
 
 include('../shared/database.php');
 
